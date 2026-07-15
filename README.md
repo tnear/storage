@@ -1,0 +1,2 @@
+# storage
+Notes on storage.
