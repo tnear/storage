@@ -30,6 +30,10 @@ Authenticating with the PSID triggers a full cryptographic revert: the drive dis
 ### Locking SP
 This SP holds lock/unlock state for data ranges. It holds *locking ranges*: spans of blocks, each with their own read/write lock flags.
 
+#### Locking SP state
+- Active: owner can query and manage locking ranges
+- Inactive: owner may not manage locking ranges. It is possible that drive still supports Opal, but must be activated first.
+
 ## Lock on reset
 Authentication should not be permanent because that mostly defeats the purpose. If a drive was unlocked and stolen, an attacker would have access to it.
 

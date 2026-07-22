@@ -27,3 +27,13 @@ MBR is a small data structure stored at the very beginning of a disk that tells 
 ### Common use cases
 - Enterprise laptop full-disk encryption
 - Compliance-driven data protection (HIPAA, GDPR)
+
+## Discovery 0
+Discovery 0 (`Discovery0`) is the standard TCG Opal discovery response that a self-encrypting drive exposes to describe its Opal capabilities.
+
+Before software tries to take ownership of an SED, it first asks the drive for "Discovery 0" to learn what it supports.
+
+Software queries it before doing Opal operations so it can learn things like:
+- whether the drive supports Opal
+- whether locking is supported
+- whether locking is enabled, etc.
