@@ -11,7 +11,7 @@ The drive itself handles encryption. Plaintext is never exposed on the bus. The 
 MBR is a small data structure stored at the very beginning of a disk that tells the system where to find the bootable partition. When a computer powers on, the BIOS reads the MBR first and hands off execution to the bootloader found there.
 
 ## Key concepts
-- Locking ranges: subdivide the drive into independently lockable regions, each with its own credentials
+- Locking ranges: subdivide the drive into independently lockable regions, each with its own credentials. The *global* range locks the entire drive.
 - Shadow MBR: a fake MBR presented to the system before authentication. After unlock, the real MBR is revealed
 - Pre-boot Authentication (PBA): only after successful authentication does the drive unlock and allow the real OS to boot. This means the encryption key is never loaded into memory until the user proves they're authorized
 

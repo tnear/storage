@@ -1,6 +1,6 @@
 # Self Encrypting Drives
 
-A self-encrypting drive (SED) implements all the features above. Every SED contains a Media Encryption Key (MEK), also known as Data Encryption Key (DEK). Data is encrypted on writes using AES.
+A self-encrypting drive (SED) automatically encrypts data written using an onboard cryptographic key. Every SED contains a Media Encryption Key (MEK), also known as Data Encryption Key (DEK). Data is encrypted on writes using AES.
 
 See also: [Opal](OpalStorageSpecification.md)
 
