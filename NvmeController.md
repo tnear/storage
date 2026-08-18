@@ -23,7 +23,7 @@ NVMe-OF example: For two servers connected by a network, the *application server
 
 ## Controller types
 1. I/O controller: most common, accepts read and write commands. Exposes namespaces. Moves data
-1. Administrative controller: manages subsystem, has no I/O queues. Creates/deletes namespaces, manages [SR-IOV](sr-iov.md), triggers resets
+1. Administrative controller: manages subsystem, has no I/O queues. Creates/deletes namespaces, manages SR-IOV, triggers resets
 1. Discovery controller (fabrics-only): tells host which subsystems and namespaces are available
 
 ### What is inside a controller
