@@ -2,8 +2,7 @@
 
 `nvme-resv-register` - Register an nvme reservation
 
-See also: [`nvme-resv`](nvme-resv.md)
-
+See also: [`nvme-resv`](NvmeResv.md)
 ## Basic usage
 
 ```bash

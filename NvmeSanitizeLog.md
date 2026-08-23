@@ -2,7 +2,7 @@
 
 `nvme-sanitize-log` - Send NVMe sanitize-log Command, return result
 
-See also: [`nvme-sanitize`](nvme-sanitize.md)
+See also: [`nvme-sanitize`](NvmeSanitize.md)
 
 ## Basic usage
 

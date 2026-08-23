@@ -2,7 +2,7 @@
 
 Flash memory is an electronic, non-volatile computer memory storage medium that can be electrically erased and reprogrammed. Flash memory retains data without power.
 
-See also: [NVMe](nvme.md)
+See also: [NVMe](Nvme.md)
 
 ## NAND vs NOR flash
 The two main types of flash memory are NOR flash and NAND flash. This file primarily focuses on NAND flash.

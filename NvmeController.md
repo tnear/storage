@@ -2,7 +2,7 @@
 
 A *controller* is the physical hardware component which manages communication between the host system and the actual flash memory. Ex: `/dev/nvme0`. It owns queue pairs.
 
-See also: [`nvme id-ctrl`](nvme-id-ctrl.md)
+See also: [`nvme id-ctrl`](NvmeIdCtrl.md)
 
 ## Responsibilities for controller
 The controller is the command processor. The host puts commands in, and the controller executes them and returns the results.

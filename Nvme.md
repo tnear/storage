@@ -2,7 +2,7 @@
 
 Non-Volatile Memory Express (NVMe) is a specification for accessing a computer's non-volatile storage attached via a PCI Express (PCIe) bus.
 
-See also: [flash memory](flash-memory.md)
+See also: [flash memory](FlashMemory.md)
 
 ## Introduction
 ```

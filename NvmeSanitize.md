@@ -2,7 +2,7 @@
 
 `nvme-sanitize` - Send NVMe Sanitize Command, return result
 
-See also: [`nvme-sanitize-log`](nvme-sanitize-log.md), [flash memory](flash-memory.md)
+See also: [`nvme-sanitize-log`](NvmeSanitizeLog.md), [flash memory](FlashMemory.md)
 
 ## Basic usage
 
