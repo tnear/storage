@@ -4,9 +4,20 @@ PCI Express (Peripheral Component Interconnect Express) is a high-speed standard
 
 ## PCIe function
 
-The word *function* comes from BD: Bus, Device, Function. Ex: `0000:01:00.X`, where `X` is the function digit. Certain physical cards have multiple functions, ex: a combination card with sound and a modem.
+A *function* is an independently discoverable PCIe interface.
 
-Classic PCI caps it a 8 functions (`0-7`), which is insufficiently low for SR-IOV.
+The word function comes from BDF: Bus, Device, Function. Ex: `0000:01:00.X`, where `X` is the function digit. Certain physical cards have multiple functions, ex: a combination card with sound and a modem.
+
+```
+0000:03:00.1
+^^^^ ^^ ^^ ^
+ |    |  | └─ function 1
+ |    |  └─── device 0
+ |    └────── bus 3
+ └─────────── PCI domain/segment 0
+```
+
+Classic PCI uses three bits for functions (`0-7`), which is insufficiently low for SR-IOV.
 
 ### Physical function
 
