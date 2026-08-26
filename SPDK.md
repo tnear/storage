@@ -1,6 +1,6 @@
 # SPDK
 
-The Storage Performance Development Kit (SPDK) provides a set of tools for writing high performance user-mode storage applications. It achieves high performance by moving all of the necessary drivers into user space and operating in a polled mode instead of relying on interrupts, which avoids kernel context switches and eliminates interrupt handling overhead.
+The Storage Performance Development Kit (SPDK) provides a set of tools for writing high performance user-mode storage applications. It achieves high performance by moving all the necessary drivers into user space and operating in a polled mode instead of relying on interrupts, which avoids kernel context switches and eliminates interrupt handling overhead.
 
 See also: [DPDK](DPDK.md)
 
@@ -16,16 +16,14 @@ Storage networking lets computers store data on devices that aren't directly att
 - Context switches between kernel and user space
 - Heavy CPU overhead
 
-### SPDK approach to storage networking
+### SPDK's approach to storage networking
 - User space drivers. This avoids context switches by bypassing the kernel. This allows direct communication between NVMe devices and user space.
 - Polled I/O. Instead of waiting for interrupts, SPDK continuously checks for completed I/O. This results in lower latency.
 - Zero-copy data path
     - Data moves directly between network and storage. This avoids the need to copy data to intermediate buffers.
 - Supports TCP and RDMA
 - Each core runs independently. No locking is necessary.
-
-### SPDK avoids locks
-SPDK avoids locks on the I/O path and instead relies on message passing.
+    - Avoids locks on the I/O path and instead relies on message passing.
 
 ## TCP vs RDMA
 RDMA allows direct memory access from one computer to another without involving the operating system or processor. It provides extremely low latency and high throughput network communication.
@@ -78,10 +76,10 @@ Doc: https://spdk.io/doc/event.html
 Events allow cross-thread communication via message passing. The event framework runs one event loop thread per CPU core. These threads are called *reactors*, and they process incoming events.
 
 ### Reactors
-A reactor is a thread which processes events. SPDK spawns *one reactor thread per core*. Each reactor has a lock-free queue for incoming events to that core. Events are executed FIFO. Event functions should *never* block and should execute quickly.
+A *reactor* is a thread which processes events. SPDK spawns *one reactor thread per core*. Each reactor has a lock-free queue for incoming events to that core. Events are executed FIFO. Event functions should *never* block and should execute quickly.
 
 ### Pollers
-Pollers are functions which are executed repeatedly until unregistered. They are registered by `spdk_poller_register`.
+*Pollers* are functions which are executed repeatedly until unregistered. They are registered by `spdk_poller_register`.
 
 The reactor event loop intersperses calls to the pollers along with other event processing. Pollers can be executed every iteration of the event loop, or scheduled periodically.
 

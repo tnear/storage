@@ -2,6 +2,8 @@
 
 PCI Express (Peripheral Component Interconnect Express) is a high-speed standard used to connect hardware components inside computers.
 
+See also: [`SR-IOV`](SRIOV.md)
+
 ## PCIe function
 
 A *function* is an independently discoverable PCIe interface.
@@ -28,4 +30,3 @@ The *physical function* (PF) is `0`. This always exists for a device.
 *Virtual functions* are created on demand by the PF.
 
 To get past the old 8-function cap, SR-IOV relies on a PCIe extension called ARI (Alternative Routing-ID Interpretation), which allows hundreds of VFs. This allows, for example, one SSD to present many VFs.
-

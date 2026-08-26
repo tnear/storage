@@ -1,6 +1,6 @@
 # Extent
 
-An extent is a contiguous (unbroken) range of disk blocks that belong to a file.
+An *extent* is a contiguous (unbroken) range of disk blocks that belong to a file.
 
 See also: [Fragmentation](Fragmentation.md)
 
