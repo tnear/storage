@@ -50,10 +50,7 @@ RDMA allows direct memory access from one computer to another without involving 
 For SPDK to use an NVMe device, it must be *detached* from the kernel mode driver and *attached* to a Linux user space framework such as `VFIO`.
 
 ### VFIO
-Virtual function I/O (VFIO) is a kernel utility for providing secure access to PCI devices in user space. VFIO is for writing user space drivers.
-
-#### `vfio-user`
-`vfio-user` is a protocol that allows a device to be emulated in a separate process outside of a virtual machine monitor. `vfio-user` is based on the VFIO `ioctl` (input/output control) interface.
+See [VFIO](VFIO.md)
 
 ### vhost
 
