@@ -4,8 +4,8 @@ Flash memory is an electronic, non-volatile computer memory storage medium that 
 
 See also: [NVMe](Nvme.md)
 
-## NAND vs NOR flash
-The two main types of flash memory are NOR flash and NAND flash. This file primarily focuses on NAND flash.
+## NOR vs NAND flash
+The two main types of flash memory are NOR flash and NAND flash. NOR is suitable for small, critical, directly accessible information. NAND is good for storing large amounts of data cheaply.
 
 | Attribute | NOR Flash | NAND Flash |
 |-----------|-----------|------------|
@@ -15,7 +15,16 @@ The two main types of flash memory are NOR flash and NAND flash. This file prima
 | Write speed | Slow | Fast |
 | Erase speed | Very slow (seconds per block) | Fast (ms per block) |
 | Cost | Higher | Lower |
-| Durability | Higher | Lower (needs wear-leveling) |
+| Durability | Medium | Lower (needs wear-leveling) |
+
+This file primarily focuses on NAND flash.
+
+### Why not store everything in NAND?
+Drives need to bootstrap first before they know how to read NAND. Drives contain a small boot ROM at a fixed address.
+
+Saving the ROM in NOR is easier because NOR is a simple array of bytes. NAND, however, is stored in pages and blocks, some of which can be bad and require error correcting codes.
+
+In other words, if everything was in NAND, there would be a circular dependency: need firmware to manage NAND, but the firmware itself is NAND.
 
 ### NAND manufacturers
 The major NAND flash memory manufacturers are Samsung, Intel, Micron, SK Hynix, and Western Digital.
