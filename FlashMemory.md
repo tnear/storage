@@ -26,6 +26,11 @@ Saving the ROM in NOR is easier because NOR is a simple array of bytes. NAND, ho
 
 In other words, if everything was in NAND, there would be a circular dependency: need firmware to manage NAND, but the firmware itself is NAND.
 
+### SPI flash
+SPI Flash is a protocol that uses the Serial Peripheral Interface (SPI) protocol to communicate with a host device. The protocol is commonly updated and modernized and is still used to store firmware, bootloaders, and configuration data.
+
+SPI flash is simple: it sends one byte at a time down one wire, unlike parallel interfaces. SPI is typically NOR flash memory.
+
 ### NAND manufacturers
 The major NAND flash memory manufacturers are Samsung, Intel, Micron, SK Hynix, and Western Digital.
 
