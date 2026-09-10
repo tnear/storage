@@ -87,7 +87,7 @@ NVMe persistent reservations (PR) allow multiple hosts to coordinate shared acce
 See [`nvme resv-register`](nvme-resv-register.md).
 
 ### Preemption
-Preempt is a command feature that allows a forcible removal of an existing reservation from another host. Preemption operates on NVMe *namespaces*.
+Preempt is a command feature that allows a forcible removal of an existing reservation from another host. Preemption operates on NVMe namespaces.
 
 Persistent reservations allow multiple hosts to coordinate exclusive access to storage resources. A preempt *removes* existing reservations, essentially "breaking the lock" that another host has placed on storage.
 
@@ -113,7 +113,7 @@ There are two types of preemption.
 ## Asynchronous Event Notification
 Asynchronous Event Notification (AEN) allows NVMe devices to notify the host system about important events or status changes without the host having to poll the device.
 
-The NVMe controller can send these notifications about events such as errors or health status. They are sent *asynchronously*, meaning they do not interrupt normal I/O operations.
+The NVMe controller can send these notifications about events such as errors or health status. They are sent asynchronously and therefore do not interrupt normal I/O operations.
 
 AENs are *admin* commands.
 

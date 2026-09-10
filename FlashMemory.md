@@ -2,7 +2,7 @@
 
 Flash memory is an electronic, non-volatile computer memory storage medium that can be electrically erased and reprogrammed. Flash memory retains data without power.
 
-See also: [NVMe](Nvme.md)
+See also: [NVMe](Nvme.md), [HDD](HardDiskDrive.md)
 
 ## NOR vs NAND flash
 The two main types of flash memory are NOR flash and NAND flash. NOR is suitable for small, critical, directly accessible information. NAND is good for storing large amounts of data cheaply.
@@ -27,7 +27,7 @@ Saving the ROM in NOR is easier because NOR is a simple array of bytes. NAND, ho
 In other words, if everything was in NAND, there would be a circular dependency: need firmware to manage NAND, but the firmware itself is NAND.
 
 ### SPI flash
-SPI Flash is a protocol that uses the Serial Peripheral Interface (SPI) protocol to communicate with a host device. The protocol is commonly updated and modernized and is still used to store firmware, bootloaders, and configuration data.
+SPI flash is a protocol that uses the Serial Peripheral Interface (SPI) protocol to communicate with a host device. The protocol is commonly updated and modernized and is still used to store firmware, bootloaders, and configuration data.
 
 SPI flash is simple: it sends one byte at a time down one wire, unlike parallel interfaces. SPI is typically NOR flash memory.
 
@@ -115,10 +115,10 @@ DRAM is *volatile*, meaning data is lost during power loss. Enterprise drives wi
 ## Overwriting
 
 ### Traditional hard drives
-Overwriting is trivial on traditional hard drives: the write head moves to the right spot and writes new magnetic data over old data. RAM works similarly: flip the bits and overwrite is done.
+Overwriting is trivial on traditional hard drives: the write head moves to the appropriate spot and writes new magnetic data over old data. RAM works similarly: flip the bits and overwrite is done.
 
 ### NAND overwriting
-A NAND cell stores data by trapping electrons in a floating gate (or charge trap). This causes *writing* and *erasing* to be fundamentally different:
+A NAND cell stores data by trapping electrons in a charge trap (floating gate). This causes *writing* and *erasing* to be fundamentally different:
 
 - Formatting (aka writing): injects electrons into the gate. Electrons are easy to add, but *cannot* be removed selectively.
 - Erasing: applies a large reverse voltage to *expel* electrons. This resets cells back to their default state (all `1`s, by NAND convention).

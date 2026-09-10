@@ -19,7 +19,7 @@ The host says "give me this data." The controller goes and gets it.
 
 Simple example (non-remote): a laptop is a host. The NVMe SSD plugged into it contains a controller.
 
-NVMe-OF example: For two servers connected by a network, the *application server* is the host because it sends NVMe commands. The *storage server* is the controller: it receives those commands, runs them against its drives, and sends back results.
+NVMe-oF example: For two servers connected by a network, the *application server* is the host because it sends NVMe commands. The *storage server* is the controller: it receives those commands, runs them against its drives, and sends back results.
 
 ## Controller types
 1. I/O controller: most common, accepts read and write commands. Exposes namespaces. Moves data
@@ -71,6 +71,6 @@ These allow two commands to be treated as an atomic unit. Example: compare and w
 1. Host processes the CQE from controller
 
 ### I/O queue pairs
-I/O queue pairs handle data operations (read, write, flush, etc.). NVMe controllers can support up to 65,535 I/O queue pairs (while admin qpair only has one). Their IDs range from [1, 65535]. Multiple I/O queue pairs enables parallelism.
+I/O queue pairs handle data operations (read, write, flush, etc.). NVMe controllers can support up to 65,535 I/O queue pairs (while admin qpair only has one). Their IDs range from `[1, 65535]`. Multiple I/O queue pairs enables parallelism.
 
 I/O queue pairs are created by the admin qpair.

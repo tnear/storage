@@ -18,8 +18,8 @@ $ sudo nvme id-ctrl /dev/nvme2 -H
 NVME Identify Controller:
 vid       : 0x144d
 ssvid     : 0x108e
-sn        : S5RTNC0T104269  # serial number
-mn        : SAMSUNG MZWLJ7T6HALA-00AU3  # model number
+sn        : S5RTNC0T104269
+mn        : SAMSUNG MZWLJ7T6HALA-00AU3
 fr        : EPK9CR5Q
 rab       : 8
 ieee      : 002538

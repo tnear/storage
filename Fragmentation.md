@@ -4,7 +4,7 @@ Hard drive fragmentation is when the pieces of a file are stored in non-contiguo
 
 On a spinning hard drive, that matters because the read/write head must physically move around to collect the pieces.
 
-See also: [Extent](Extent.md)
+See also: [Extent](Extent.md), [HDD](HardDiskDrive.md)
 
 ## Introduction
 
@@ -22,7 +22,7 @@ move past X
 read more A
 ```
 
-## Why fragmentation happens
+### Why fragmentation happens
 
 If a disk initially has this:
 

@@ -2,6 +2,8 @@
 
 `nvme-create-ns` - Send NVMe Namespace management command to create namespace, returns results.
 
+See also: [`nvme attach-ns`](NvmeAttachNs.md)
+
 ## Basic usage
 ```bash
 $ sudo nvme create-ns /dev/nvme0 --nsze=6104741 --ncap=6104741 --flbas=0 -dps=0
