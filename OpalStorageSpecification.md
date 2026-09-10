@@ -37,3 +37,20 @@ Software queries it before doing Opal operations so it can learn things like:
 - whether the drive supports Opal
 - whether locking is supported
 - whether locking is enabled, etc.
+
+## Authorities (aka Users)
+An authority is an identity with specific permissions (similar to users, which authorities are sometimes also called). Ex:
+
+- `SID`: Used during initial provisioning (before Admin1 is ready)
+- `Admin1`: most powerful authority, its PIN can change configurations and create other users (authorities)
+- `User1`: optionally created by Admin1. Its PIN has less power. Once configured, User1 can authenticate with its own PIN and change a range's locking state.
+
+### Admin1
+- Configure locking ranges
+- Enable Opal users such as `User1`
+- Assign or change user PINs
+- Grant or revoke a user's permissions
+- Lock and unlock configured ranges
+
+### User1
+Can only perform operations granted by Admin1. A common least-privileged setup would grant User1 permissions to lock/unlock and nothing else.
