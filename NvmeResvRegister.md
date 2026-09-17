@@ -3,6 +3,7 @@
 `nvme-resv-register` - Register an nvme reservation
 
 See also: [`nvme-resv`](NvmeResv.md)
+
 ## Basic usage
 
 ```bash
@@ -11,7 +12,7 @@ sudo nvme resv-register /dev/nvme0n1 \
     --crkey=0 \
     --nrkey=0x1234 \
     --rrega=0 \  # 0 = Register action
-    --cptpl=3  # enable ptpl
+    --cptpl=3    # enable ptpl
 
 # 2. Acquire a reservation
 sudo nvme resv-acquire /dev/nvme0n1 \

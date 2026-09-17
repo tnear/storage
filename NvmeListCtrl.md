@@ -2,9 +2,9 @@
 
 `nvme-list-ctrl` - Send NVMe Identify List Controllers, return result and structure
 
-- Hierarchy: Subsystem -> Controller -> Namespace
 - To list all subsystems, see [`nvme list-subsys`](nvme-list-subsys.md).
 - To list all namespaces, see [`nvme list`](nvme-list.md).
+- Hierarchy: Subsystem -> Controller -> Namespace
 
 Syntax: `nvme list-ctrl <device>`
 

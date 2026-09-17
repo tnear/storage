@@ -5,9 +5,7 @@
 *host* is also known as *initiator* or *client*.
 
 ## Description
-- `show-hostnqn` outputs the unique identifier that represents the current machine when it initiates NVMe-oF connections.
-- The target can use this information for authentication (determining if the host is allowed to connect)
-- The target can also use this information for access control (determining which storage resources an initiator can access)
+`show-hostnqn` outputs the unique identifier that represents the current machine when it initiates NVMe-oF connections. The target can use this information for authentication (determining if the host is allowed to connect). The target can also use this information for access control (determining which storage resources an initiator can access).
 
 ## Basic usage
 ```bash

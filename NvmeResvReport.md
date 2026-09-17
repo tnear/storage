@@ -2,10 +2,12 @@
 
 `nvme-resv-report` - Send NVMe Reservation Report, parse the result
 
+See also: [`nvme resv`](NvmeResv.md)
+
 ## Basic usage
 ```bash
 # Sample output from nvme resv-report
-sudo nvme resv-report /dev/nvme0n1
+$ sudo nvme resv-report /dev/nvme0n1
 
 # Output explanation:
 NVME Reservation Report:

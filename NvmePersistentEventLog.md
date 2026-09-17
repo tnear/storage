@@ -4,9 +4,7 @@
 
 ## Introduction
 
-The Persistent Event Log (PEL) is an NVMe controller-owned history log. It is the SSD firmware's durable audit trail for important events.
-
-It records things like:
+The Persistent Event Log (PEL) is an NVMe controller-owned history log. It is the SSD firmware's durable audit trail for important events. It records information such as:
 
 - SMART/health snapshots
 - power-on/reset events
@@ -20,31 +18,26 @@ This log is retained across resets and power cycles. The NVMe spec says the numb
 
 ## CLI usage
 
-| Actions | Description |
-|---------|-------------|
+| Actions    | Description |
+|------------|-------------|
 | `action=1` | establish a reporting context and read |
-| `action=0` | read more data from action=1 context   |
+| `action=0` | read more data from `action=1` context |
 | `action=2` | release the context                    |
 | `action=3` | reserved / invalid in the nvme spec    |
-
-```bash
-# release context
-$ sudo nvme persistent-event-log /dev/nvme0 --action=2 --log_len=512 >/dev/null
-```
 
 ## Summarize event log
 
 ```bash
-# release context (do this first)
+# release context using action=2 (do this first)
 $ sudo nvme persistent-event-log /dev/nvme0 --action=2 --log_len=512 >/dev/null
 
-# read context
+# read context using action=1
 $ sudo nvme persistent-event-log /dev/nvme0 --action=1 --log_len=5243292 > /tmp/nvme0-pel.txt
 
 # bucket events
 $ awk -F': ' '/^Event Type:/ {count[$2]++} END {for (e in count) printf "%8d  %s\n", count[e], e}' /tmp/nvme0-pel.txt | sort -nr
 
-# output
+# sample output
 30841  Power-on or Reset Event(0x4)
 25566  Change Namespace Event(0x6)
  9518  Format NVM Start Event(0x7)

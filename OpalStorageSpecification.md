@@ -29,9 +29,7 @@ MBR is a small data structure stored at the very beginning of a disk that tells 
 - Compliance-driven data protection (HIPAA, GDPR)
 
 ## Discovery 0
-Discovery 0 (`Discovery0`) is the standard TCG Opal discovery response that a self-encrypting drive exposes to describe its Opal capabilities.
-
-Before software tries to take ownership of an SED, it first asks the drive for "Discovery 0" to learn what it supports.
+Discovery 0 (`Discovery0`) is the standard TCG Opal discovery response that a self-encrypting drive exposes to describe its Opal capabilities. Before software tries to take ownership of an SED, it first asks the drive for "Discovery 0" to learn what it supports.
 
 Software queries it before doing Opal operations so it can learn things like:
 - whether the drive supports Opal
@@ -41,16 +39,16 @@ Software queries it before doing Opal operations so it can learn things like:
 ## Authorities (aka Users)
 An authority is an identity with specific permissions (similar to users, which authorities are sometimes also called). Ex:
 
-- `SID`: Used during initial provisioning (before Admin1 is ready)
-- `Admin1`: most powerful authority, its PIN can change configurations and create other users (authorities)
-- `User1`: optionally created by Admin1. Its PIN has less power. Once configured, User1 can authenticate with its own PIN and change a range's locking state.
+- `SID`: Used during initial provisioning (before `Admin1` is ready)
+- `Admin1`: most powerful authority, its PIN can change configurations and create other users ("authorities")
+- `User1`: optionally created by `Admin1`. Its PIN has less power. Once configured, `User1` can authenticate with its own PIN and change a range's locking state.
 
-### Admin1
+### `Admin1`
 - Configure locking ranges
 - Enable Opal users such as `User1`
 - Assign or change user PINs
 - Grant or revoke a user's permissions
 - Lock and unlock configured ranges
 
-### User1
-Can only perform operations granted by Admin1. A common least-privileged setup would grant User1 permissions to lock/unlock and nothing else.
+### `User1`
+Can only perform operations granted by `Admin1`. A common least-privileged setup would grant `User1` permissions to lock/unlock and nothing else.

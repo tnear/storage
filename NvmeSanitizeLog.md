@@ -4,6 +4,9 @@
 
 See also: [`nvme-sanitize`](NvmeSanitize.md)
 
+## Introduction
+A sanitizing Block Erase or Overwrite across an entire NVMe drive can take an hour, and it keeps running in the background even across power cycles. `nvme sanitize-log` is the mechanism to monitor sanitize's process.
+
 ## Basic usage
 
 ```bash
